@@ -16,7 +16,10 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // logo: '/logo.svg',
-    outline: 'deep',// 显示从 `<h2>` 到 `<h6>` 的所有标题
+    outline: {
+      level: 'deep', // 显示从 `<h2>` 到 `<h6>` 的所有标题
+      label: 'Title navigation'
+    },
     // 顶部导航栏
     nav: [
       { text: 'Home', link: '/' },
@@ -39,10 +42,18 @@ export default defineConfig({
       }
     ],
     footer: {
-      copyright: `Copyright © ${currentYear}-present CuberLuo`
+      message: '技术天生自由',
+      copyright: `Copyright © ${currentYear} CuberLuo`
     },
     search: {
       provider: 'local'
+    },
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short'
+      }
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/CuberLuo' }
