@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 
 const basePath = '/cpuBlog'
 const currentYear = new Date().getFullYear()
+const routeName1 = '前端开发'
+const routeName2 = '医药基础'
+const routeName3 = '人工智能'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: basePath,
@@ -23,7 +26,14 @@ export default defineConfig({
     // 顶部导航栏
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'My Blogs', link: '/正则表达式' }
+      {
+        text: 'My Blogs',
+        items: [
+          { text: routeName1, link: '/route1' },
+          { text: routeName2, link: '/route2' },
+          { text: routeName3, link: '/route3' }
+        ]
+      }
     ],
     // 侧边导航栏
     sidebar: [
@@ -37,7 +47,24 @@ export default defineConfig({
       {
         text: 'My Blogs',
         items: [
-          { text: '正则表达式', link: '/正则表达式' }
+          {
+            text: routeName1,
+            collapsed: true,
+            items:[
+              { text: '正则表达式', link: `/${routeName1}/正则表达式` },
+              { text: '代码规范', link: `/${routeName1}/代码规范` },
+            ]
+          },
+          {
+            text: routeName2,
+            collapsed: true,
+            items:[]
+          },
+          {
+            text: routeName3,
+            collapsed: true,
+            items:[]
+          },
         ]
       }
     ],
