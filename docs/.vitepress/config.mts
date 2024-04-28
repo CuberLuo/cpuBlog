@@ -41,7 +41,12 @@ export default defineConfig({
       copyright: `Copyright © ${currentYear} CuberLuo`
     },
     search: {
-      provider: 'local'
+      provider: 'algolia',
+      options: {
+        appId: '5VATYTLZT7',
+        apiKey: '41dbe837ed22122f9fe7350428006678',
+        indexName: 'cuberluoio'
+      }
     },
     lastUpdated: {
       text: 'Updated at',
