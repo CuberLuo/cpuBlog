@@ -68,8 +68,6 @@ ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 
 初始化状态需要在类内部传入一个构造器，这样就可以在render函数中使用this.state.isHot读取状态
 
-[完整代码链接](./06_组件实例三大属性1_state)
-
 ```js
 constructor(props){
     super(props)
